@@ -12,6 +12,10 @@ export const Home = () => {
     history.push("/read")}
     const history = useHistory()
 
+    const about = () =>{
+    history.push("/about")}
+    
+
     return(
         <div className="App">
         <form className="App-sender" onSubmit={submit}>
@@ -24,7 +28,11 @@ export const Home = () => {
           <input type="text" /><br />
           <input type="submit" />    
           </form>
+          <p onClick={about}>
+            ABOUT
+          </p>
         </div>
+      
     )
-    
+        
 }

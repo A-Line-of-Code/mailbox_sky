@@ -1,16 +1,31 @@
-import React, {useState} from "react";
+import React from "react";
 import './App.css';
-
-
+import {Tech} from "./components/tech"
 
 export const About = () => {
-
-    const [from, setFrom] = useState("")
-  
+      
+    const tech = [
+    {
+        "name":"1", 
+        "img" : "1",
+        "msg" : "1"
+    },
+    {
+        "name":"11", 
+        "img" : "11",
+        "msg" : "11"
+    }
+    ]
+        
+        
     return(
-        <div className="App">
-        <h1>About</h1>
+        <div>
+            <h1>About</h1>
+              {tech.map(c=> {
+                  return(
+                    <Tech name={c.name} img={c.img} msg={c.msg} />
+                  )
+              })}
         </div>
-    )
-    
+        )
 }
