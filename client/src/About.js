@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import {Tech} from "./components/tech"
 
 export const About = () => {
-      
-    const tech = [
-    {
-        "name":"1", 
-        "img" : "1",
-        "msg" : "1"
-    },
-    {
-        "name":"11", 
-        "img" : "11",
-        "msg" : "11"
-    }
-    ]
-        
-        
+  
+    const [tech, setTech] = useState("");
+
+    useEffect(() => {
+        callApi()
+         //.then(resp => resp.json())
+         .then(resp => setTech(resp))
+    });
+
+     const callApi = async () => {
+        const response = await fetch('/api/tech');
+        const body = await response.json();
+        if (response.status !== 200) throw Error(body.message);
+        return body;
+      };
+
     return(
         <div>
             <h1>About</h1>
-              {tech.map(c=> {
+              {tech ? tech.map(c=> {
                   return(
-                    <Tech name={c.name} img={c.img} msg={c.msg} />
+                    <Tech key = {c.name} name={c.name} img={c.img} msg={c.msg} />
                   )
-              })}
+              }): ""}
         </div>
         )
 }
