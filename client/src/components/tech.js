@@ -1,11 +1,11 @@
 import React from "react";
-
+import '../About.css';
 export const Tech = (props) => {
    
     return(
-        <div>
+        <div className="tech">
         name = {props.name} <br />
-        img = {props.img} <br />
+        <img src = {props.img} alt="img" width="30%"/> <br />
         msg = {props.msg} <br />
         </div>
     )

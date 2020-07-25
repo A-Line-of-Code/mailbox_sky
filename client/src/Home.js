@@ -8,7 +8,8 @@ export const Home = () => {
 
     const [from, setFrom] = useState("")
   
-    const submit = () =>{alert ("submit")
+    const submit = () =>{
+    alert ("/api/read(get)")
     history.push("/read")}
     const history = useHistory()
 
@@ -17,20 +18,23 @@ export const Home = () => {
     
 
     return(
+      
         <div className="App">
+        <h1 className="app-title">Mail Box</h1>
         <form className="App-sender" onSubmit={submit}>
           From &nbsp;
-          <input value={from} onChange={(event)=>setFrom(event.target.value)} type="text" /><br />
-          <p>{from}</p>
+          <input value={from} onChange={(event)=>setFrom(event.target.value)} type="text" /><br />          
           To &nbsp;
           <input type="text" /><br />
           PW &nbsp;
           <input type="text" /><br />
-          <input type="submit" />    
+          <input type="submit"/>    
           </form>
-          <p onClick={about}>
+          
+          <p onClick={about} className="test">
             ABOUT
           </p>
+          
         </div>
       
     )

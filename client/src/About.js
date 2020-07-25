@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
+import './About.css';
 import {Tech} from "./components/tech"
 
 export const About = () => {
@@ -21,12 +21,15 @@ export const About = () => {
 
     return(
         <div>
+
             <h1>About</h1>
+            <div className="about">
               {tech ? tech.map(c=> {
                   return(
                     <Tech key = {c.name} name={c.name} img={c.img} msg={c.msg} />
                   )
               }): ""}
+            </div>
         </div>
         )
 }

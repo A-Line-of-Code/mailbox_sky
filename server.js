@@ -11,6 +11,13 @@ const data = fs.readFileSync("./database.json");
 const conf = JSON.parse(data);
 const mysql = require("mysql");
 
+const users = [
+  {
+    "receiver": "to",
+    "password": "2"
+  }  
+]
+
 const connection = mysql.createConnection({
   host : conf.host,
   user: conf.user,
@@ -30,11 +37,33 @@ app.get('/api/tech', (req, res) => {
   );
 });
 
-app.post('/api/world', (req, res) => {
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
+app.get('/api/read', (req, res) => {
+  connection.query(
+    "SELECT * FROM letter WHERE id=0;",
+    (err, rows, fields) => {
+      res.send(rows);
+    }
   );
 });
 
+/*
+app.post('/api/read', (req, res) => {
+  let result = users.find(user=>user.receiver === req.body.receiver);
+  if(result){
+    if(result.password === req.body.password){
+      res.status(200).send(
+        {msg:"successful login."}
+      )
+    }else{
+      res.status(200).send(
+        {msg:"incorrect password."}
+      )
+    }
+  }else{
+    res.status(200).send(
+      {msg:"Not a user"}
+    )
+  }
+});
+*/
 app.listen(port, () => console.log(`Listening on port ${port}`));
