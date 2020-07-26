@@ -1,22 +1,18 @@
 const fs = require("fs");
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({secret: 'ssshhhhh'}));
 
 const data = fs.readFileSync("./database.json");
 const conf = JSON.parse(data);
 const mysql = require("mysql");
-
-const users = [
-  {
-    "receiver": "to",
-    "password": "2"
-  }  
-]
+var sess;
 
 const connection = mysql.createConnection({
   host : conf.host,
@@ -31,39 +27,41 @@ connection.connect();
 app.get('/api/tech', (req, res) => {
   connection.query(
     "SELECT * FROM TECH;",
-    (err, rows, fields) => {
-      res.send(rows);
-    }
+    (err, rows, fields) => { res.send(rows);}
   );
 });
 
-app.get('/api/read', (req, res) => {
+app.post('/api/read', function(req, res) {
+  sess=req.session;
+  var to = req.body.to; 
+  var pw= req.body.password;
+  
+	connection.query(
+    'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],
+    (err, rows, fields) => {      
+      if (rows.length > 0) {
+        sess.receiver = to;
+        sess.password = pw;        			
+      }
+      else {
+				res.send('error');;
+      }	
+      res.end();		
+    }
+  );	
+});
+
+app.get('/api/letter', (req, res) => {
+  sess=req.session;
+  const letterTo = sess.receiver;
+  const letterPw = sess.password;
+  console.log("letter cred=" + letterTo + letterPw);
   connection.query(
-    "SELECT * FROM letter WHERE id=0;",
-    (err, rows, fields) => {
+    'SELECT * FROM letter WHERE receiver = ? AND password = ?', [letterTo, letterPw],
+    (err, rows, fields) => {      
       res.send(rows);
     }
   );
 });
 
-/*
-app.post('/api/read', (req, res) => {
-  let result = users.find(user=>user.receiver === req.body.receiver);
-  if(result){
-    if(result.password === req.body.password){
-      res.status(200).send(
-        {msg:"successful login."}
-      )
-    }else{
-      res.status(200).send(
-        {msg:"incorrect password."}
-      )
-    }
-  }else{
-    res.status(200).send(
-      {msg:"Not a user"}
-    )
-  }
-});
-*/
 app.listen(port, () => console.log(`Listening on port ${port}`));

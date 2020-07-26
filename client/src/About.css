@@ -1,18 +1,24 @@
 body{
     background: lightyellow;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-family: "Lucida Sans Unicode", sans-serif;    
+    font-size: 15px;
+  }
+ 
+  h1, .title{
+    color: #282c34;
   }
   
-  
+  .blue{
+    color: powderblue;
+  }
   .app-title{
     text-align: center;
     color: powderblue;
-    font-size: 70px;
+    font-size: 35px;
   }
   .about{
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     border: 5px solid #282c34;
     border-radius: 25px;
     font-weight: 900;
