@@ -24,31 +24,30 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-app.get('/api/tech', (req, res) => {
-  connection.query(
-    "SELECT * FROM TECH;",
-    (err, rows, fields) => { res.send(rows);}
-  );
-});
-
 app.post('/api/read', function(req, res) {
   sess=req.session;
   var to = req.body.to; 
   var pw= req.body.password;
+  console.log("server"+to+pw);
   
 	connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],
     (err, rows, fields) => {      
       if (rows.length > 0) {
         sess.receiver = to;
-        sess.password = pw;        			
+        sess.password = pw;  
+        console.log("length>0");
+                 			
       }
       else {
-				res.send('error');;
+        console.log("else"); 
+        sess.receiver = "error";
+        sess.password = "error";               
       }	
       res.end();		
     }
-  );	
+  );
+  	
 });
 
 app.get('/api/letter', (req, res) => {
@@ -58,10 +57,19 @@ app.get('/api/letter', (req, res) => {
   console.log("letter cred=" + letterTo + letterPw);
   connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [letterTo, letterPw],
-    (err, rows, fields) => {      
-      res.send(rows);
+    (err, rows, fields) => {     
+        res.send(rows); 
     }
   );
 });
+
+/*
+app.get('/api/tech', (req, res) => {
+  connection.query(
+    "SELECT * FROM TECH;",
+    (err, rows, fields) => { res.send(rows);}
+  );
+});
+*/
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

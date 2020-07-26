@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,7 @@ import {About} from "./About"
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className="center">
         
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
