@@ -51,7 +51,7 @@ app.post('/api/read', function(req, res) {
         sess.receiver = to;
         sess.password = pw; 
         console.log(rows); 
-       return res.status(200).send("true");                     
+        res.send(rows);                     
       }
       else{      
         console.log("else"); 

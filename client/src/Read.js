@@ -5,15 +5,37 @@ import {Letter} from "./components/letter"
 export const Read = () => {    
   const [letter, setLetter] = useState("");
   useEffect(() => {
-      callApi()    
+      callApi2()    
        .then(resp => setLetter(resp))
   });
+
+  const callApi2 = async () => {
+    const response = await fetch("/api/read", {            
+      method: "POST", 
+      mode: 'cors',     
+      headers: { 
+          "Content-type": "application/json"
+      },
+      body: JSON.stringify({ 
+        to: "receiver", 
+        password: "2"               
+    })        
+  })
+
+
+    
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  };
+/*
    const callApi = async () => {
       const response = await fetch('/api/letter');
       const body = await response.json();
       if (response.status !== 200) throw Error(body.message);
       return body;
     };
+*/
       return(
         <div>            
           {letter ? letter.map(c=> {
