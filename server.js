@@ -5,13 +5,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
 
-//var jsonParser = bodyParser.json()
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 app.use(session({secret: 'ssshhhhh'}));
 
 const data = fs.readFileSync("./database.json");
@@ -29,35 +24,7 @@ const connection = mysql.createConnection({
 });
 
 connection.connect();
-/*
-app.post('/api/read', function(req, res) {
-  sess=req.session;
-  var to = req.body.to; 
-  var pw= req.body.password;
-  console.log("server"+to+pw);
 
-	connection.query(
-    'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],
-    (err, rows, fields) => {      
-      if (rows.length > 0) {
-        sess.receiver = to;
-        sess.password = pw; 			 
-        console.log("length>0");
-        console.log("rows = " + rows);
-        return res.send(rows)
-      }
-      else {				
-        console.log("else"); 
-        sess.receiver = "error";
-        sess.password = "error";
-        return res.send("error");               
-      }	
-    }
-  );	
-  
-
-});
-*/
 app.post('/api/read', function(req, res) {
  
   sess=req.session;
@@ -70,11 +37,11 @@ app.post('/api/read', function(req, res) {
       if (rows.length > 0) {
         sess.receiver = to;
         sess.password = pw; 
-        console.log(rows); 
+        //console.log(rows); 
         res.status(200).send(rows);                     
       }
       else{      
-        console.log("else"); 
+        //console.log("else"); 
         sess.receiver = "error";
         sess.password = "error";
         return res.status(400).send({"result":"false"});              
@@ -87,7 +54,7 @@ app.get('/api/letter', (req, res) => {
   sess=req.session;
   const letterTo = sess.receiver;
   const letterPw = sess.password;
-  console.log("letter cred=" + letterTo + letterPw);
+  //console.log("letter cred=" + letterTo + letterPw);
   connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [letterTo, letterPw],
     (err, rows, fields) => {     
@@ -95,7 +62,5 @@ app.get('/api/letter', (req, res) => {
     }
   );
 });
-
-
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
