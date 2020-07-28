@@ -30,38 +30,58 @@ const connection = mysql.createConnection({
 
 connection.connect();
 /*
-app.post('/login', jsonParser, function (req, res) {
-  console.log(req.body);
-  res.send('welcome, ' + req.body.to)
-})
+app.post('/api/read', function(req, res) {
+  sess=req.session;
+  var to = req.body.to; 
+  var pw= req.body.password;
+  console.log("server"+to+pw);
+
+	connection.query(
+    'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],
+    (err, rows, fields) => {      
+      if (rows.length > 0) {
+        sess.receiver = to;
+        sess.password = pw; 			 
+        console.log("length>0");
+        console.log("rows = " + rows);
+        return res.send(rows)
+      }
+      else {				
+        console.log("else"); 
+        sess.receiver = "error";
+        sess.password = "error";
+        return res.send("error");               
+      }	
+    }
+  );	
+  
+
+});
 */
 app.post('/api/read', function(req, res) {
  
   sess=req.session;
   const to = req.body.to; 
-  const pw= req.body.password;
-  console.log("server"+to+pw);
-  console.log(req.body);
+  const pw= req.body.password;  
  
 	connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],    
-    (err, rows, fields) => {        
-      
+    (err, rows, fields) => {     
       if (rows.length > 0) {
         sess.receiver = to;
         sess.password = pw; 
         console.log(rows); 
-        res.send(rows);                     
+        res.status(200).send(rows);                     
       }
       else{      
         console.log("else"); 
         sess.receiver = "error";
         sess.password = "error";
-        return res.status(400).send("false");              
+        return res.status(400).send({"result":"false"});              
       }      
-});
+    })
+  });      
 
-});
 
 app.get('/api/letter', (req, res) => {
   sess=req.session;
