@@ -37,7 +37,7 @@ const about = () =>{history.push("/about")}
    return(
              
         <div className="App">
-        <img src="img/mail1.jpg" width="10%" alt="mail"/>
+        <img src="img/server2.jpg" width="10%" alt="mail"/>
         <h1 className="app-title">Mail Box</h1>
         <div className="App-sender" >
                    
