@@ -45,9 +45,9 @@ const about = () =>{history.push("/about")}
           <input value={to} onChange={(event)=>setTo(event.target.value)} type="text" /><br />
           PW &nbsp;
           <input value={password} onChange={(event)=>setPassword(event.target.value)}type="password" /><br />
-          <button type="button" className="button" onClick={submit}>submit</button>   
+          <button type="button" className="button" onClick={submit}>open</button>   
           </div>          
-          <p onClick={about} className="test">
+          <p onClick={about} className="aboutlink">
             ABOUT
           </p> 
         </div>  

@@ -20,9 +20,10 @@ export const Read = () => {
         <div>            
           {letter ? letter.map(c=> {
             return(
-              <Letter key = {c.receiver} receiver={c.receiver} img={c.img} msg={c.msg} />
+              <Letter key = {c.receiver} receiver={c.receiver} img={c.img} msg={c.msg} msg2={c.msg2} />
             )
             }): ""}
         </div>
         )    
 }
+

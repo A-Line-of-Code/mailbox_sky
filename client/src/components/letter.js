@@ -8,7 +8,8 @@ export const Letter = (props) => {
         <div className="container">
             <img src = {props.img} alt="img" width="30%"/> <br />
             <div className="msg">        
-                {props.msg} <br /><br />
+                {props.msg}<br />{props.msg2}
+                <br /><br />
                 <div className="from">
                 Kind regards, <br />
                 Sky.
