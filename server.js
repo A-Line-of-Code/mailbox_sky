@@ -47,7 +47,7 @@ app.post('/api/read', function(req, res) {
         return res.status(400).send({"result":"false"});              
       }      
     })
-  });      
+});      
 
 
 app.get('/api/letter', (req, res) => {

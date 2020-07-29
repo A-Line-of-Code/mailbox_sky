@@ -9,8 +9,8 @@ export const About = () => {
             <div className="tech">
               <p className="blue">Development</p>
               <div className="title"> React, Node.js, Fetch API, MySQl (Amazon RDS)</div>
-              <img src="img/client2.jpg" alt="React" height="200px" />
-                <img src="img/server2.jpg" alt="Node.js" height="200px" /><br/>
+              <img src="img/blue.jpg" alt="React" height="200px" />
+                <img src="img/blue.jpg" alt="Node.js" height="200px" /><br/>
               <p className="blue">Deployment</p>
               <div className="title">              
               <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">Docker deployment files</a><br/>
