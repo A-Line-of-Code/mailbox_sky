@@ -12,9 +12,8 @@ export const About = () => {
               <img src="img/client.png" alt="React" height="200px" />
                 <img src="img/server.png" alt="Node.js" height="200px" /><br/>
               <p className="blue">Deployment</p>
-              <div className="title"> 
-              (1) hosting: AWS 
-              (2) <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">Docker deployment files</a><br/>
+              <div className="title">              
+              <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">Docker deployment files</a><br/>
               </div>
             </div>
             </div>
