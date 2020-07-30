@@ -13,7 +13,7 @@ export const About = () => {
                 <img src="/img/node.jpg" alt="Node.js" height="350px" /><br/>
               <p className="blue">Deployment</p>
               <div className="title">              
-              <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">Docker deployment files</a><br/>
+              <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">GitHub</a><br/>
               </div>
             </div>
             </div>

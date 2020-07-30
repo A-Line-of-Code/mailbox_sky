@@ -38,14 +38,15 @@ app.post('/api/read', function(req, res) {
         sess.receiver = to;
         sess.password = pw; 
         //console.log(rows); 
-        res.status(200).send(rows);                     
+        return res.status(200).send(rows);
+                            
       }
       else{      
         //console.log("else"); 
         sess.receiver = "error";
         sess.password = "error";
         return res.status(400).send({"result":"false"});              
-      }      
+      }            
     })
 });      
 
@@ -58,9 +59,9 @@ app.get('/api/letter', (req, res) => {
   connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [letterTo, letterPw],
     (err, rows, fields) => {     
-        res.send(rows); 
-    }
-  );
+         res.send(rows); 
+        
+    });
 });
 
 //
@@ -74,4 +75,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 //
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
