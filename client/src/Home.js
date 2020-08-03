@@ -4,8 +4,8 @@ import './App.css';
 
 export const Home = () => {
 
-  const [to, setTo] = useState("")
-  const [password, setPassword] = useState("")
+  const [to, setTo] = useState("employer")
+  const [password, setPassword] = useState("2employer")
   const history = useHistory()  
 
   const submit = ()=> {      
@@ -44,7 +44,7 @@ const about = () =>{history.push("/about")}
           To &nbsp;
           <input value={to} onChange={(event)=>setTo(event.target.value)} type="text" /><br />
           PW &nbsp;
-          <input value={password} onChange={(event)=>setPassword(event.target.value)}type="password" /><br />
+          <input value={password} onChange={(event)=>setPassword(event.target.value)} type="password" /><br />
           <button type="button" className="button" onClick={submit}>open</button>   
           </div>          
           <p onClick={about} className="aboutlink">
