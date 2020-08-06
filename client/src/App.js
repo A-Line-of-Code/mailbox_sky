@@ -9,6 +9,7 @@ import {
 import {Home} from "./Home"
 import {Read} from "./Read"
 import {About} from "./About"
+import {Book} from "./Book"
 
 export default function App() {
   return (
@@ -20,6 +21,9 @@ export default function App() {
         <Switch>
           <Route path="/read">
             <Read />
+          </Route>
+          <Route path="/book">
+            <Book />
           </Route>
           <Route path="/about">
             <About />

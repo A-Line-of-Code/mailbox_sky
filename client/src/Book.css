@@ -1,0 +1,8 @@
+#magazine{
+    width: 800px;
+    height: 400px;
+  }
+  
+#magazine .turn-page{
+    background-color:#ccc;
+  }

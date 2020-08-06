@@ -7,7 +7,7 @@ export const Read = () => {
   useEffect(() => {
       callApi()    
        .then(resp => setLetter(resp))
-  });
+  },[]);
 
    const callApi = async () => {    
     

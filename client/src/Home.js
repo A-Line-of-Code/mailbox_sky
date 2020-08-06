@@ -34,19 +34,23 @@ export const Home = () => {
   };
 
 const about = () =>{history.push("/about")}
+const book = () =>{history.push("/book")}
+
    return(
              
         <div className="App">
         <img src="img/mail1.jpg" width="10%" alt="mail"/>
         <h1 className="app-title">Mail Box</h1>
-        <div className="App-sender" >
-                   
+        <div className="App-sender" >                   
           To &nbsp;
           <input value={to} onChange={(event)=>setTo(event.target.value)} type="text" /><br />
           PW &nbsp;
           <input value={password} onChange={(event)=>setPassword(event.target.value)} type="password" /><br />
           <button type="button" className="button" onClick={submit}>open</button>   
-          </div>          
+        </div>
+        <div onClick={book} className="book" >                   
+            book
+        </div>           
           <p onClick={about} className="aboutlink">
             ABOUT
           </p> 
