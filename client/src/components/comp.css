@@ -25,14 +25,16 @@ body{
 
 .msg{      
     text-align: center;    
-    font-size: 20px;
+    font-size: 28px;
     color: darkslateblue;
     font-family: "Lucida Sans Unicode", sans-serif;
+    font-family: 'Sofia';
 }
 
 .from{
     text-align: center;    
     color:darkslategrey;
     /*font-family: "Lucida Sans Unicode", sans-serif;*/  
-    font-family: 'Sofia';  
+    font-family: 'Sofia';
+    font-size: 20px;  
 }

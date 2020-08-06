@@ -36,13 +36,17 @@ export const Book = () => {
         ref={component => {flipPage = component;}}
         orientation="horizontal"
         width="100%"
-        animationDuration={2000} >
+        animationDuration={1000} 
+        disableSwipe="true"        
+        flipOnTouch="false"
+        flipOnTouchZone="0"
+        >
         
         
         {page ? page.map(c=> {
             return(
               <article>
-              <Bookpage key={c.id} img={c.img} msg={c.msg}/>
+              <Bookpage key={c.id} id={c.id} img={c.img} msg={c.msg}/>
               </article>
             )
         }): ""}      
