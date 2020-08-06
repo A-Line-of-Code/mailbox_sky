@@ -1,5 +1,7 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import FlipPage from "react-flip-page";
+import {Bookpage} from "./components/bookpage"
+import './Book.css';
 
 
 export const Book = () => {
@@ -14,38 +16,42 @@ export const Book = () => {
     flipPage.gotoPreviousPage();
   };
 
+  const [page, setPage] = useState("");
+  useEffect(() => {
+      callApi()    
+       .then(resp => setPage(resp))
+  },[]);
+
+   const callApi = async () => {       
+      const response = await fetch('/api/page');
+      const body = response.json();
+      if (response.status !== 200) throw Error(body.message);
+      return body;      
+    };
+
   return (
-    <div>
+    <div id="magazine">
       <FlipPage
-        ref={component => {
-          flipPage = component;
-        }}
+      className = "page"
+        ref={component => {flipPage = component;}}
         orientation="horizontal"
         width="100%"
-        animationDuration={2000}
-      >
-        <article>
-          <img
-            src="https://via.placeholder.com/968x200/0000FF/808080"
-            alt="est"
-          />
-        </article>
-        <article>
-          <img
-            src="https://via.placeholder.com/968x200/FF0000/FFFFFF"
-            alt="est"
-          />
-        </article>
-        <article>
-          <img
-            src="https://via.placeholder.com/968x200/FFFF00/000000"
-            alt="est"
-          />
-        </article>
+        animationDuration={2000} >
+        
+        
+        {page ? page.map(c=> {
+            return(
+              <article>
+              <Bookpage key={c.id} img={c.img} msg={c.msg}/>
+              </article>
+            )
+        }): ""}      
+        
+        
       </FlipPage>
 
-      <button onClick={onPrev}>Prev</button>
-      <button onClick={onNext}>Next</button>
+      <button className="button1" onClick={onPrev}>&#8678;</button>
+      <button className="button1" onClick={onNext}>&#8680;</button>
     </div>
   );
 }

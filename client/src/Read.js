@@ -9,13 +9,11 @@ export const Read = () => {
        .then(resp => setLetter(resp))
   },[]);
 
-   const callApi = async () => {    
-    
+   const callApi = async () => {  
       const response = await fetch('/api/letter');
       const body = response.json();
       if (response.status !== 200) throw Error(body.message);
-      return body;
-      
+      return body;      
     };
 
       return(

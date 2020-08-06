@@ -38,8 +38,7 @@ app.post('/api/read', function(req, res) {
         sess.receiver = to;
         sess.password = pw; 
         //console.log(rows); 
-        return res.status(200).send(rows);
-                            
+        return res.status(200).send(rows);                            
       }
       else{      
         //console.log("else"); 
@@ -61,6 +60,15 @@ app.get('/api/letter', (req, res) => {
     (err, rows, fields) => {     
          res.send(rows); 
         
+    });
+});
+
+app.get('/api/page', (req, res) => {
+ 
+  connection.query(
+    'SELECT * FROM page',
+    (err, rows, fields) => {    
+         res.send(rows);         
     });
 });
 

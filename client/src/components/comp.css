@@ -10,14 +10,15 @@ body{
     padding: 15px;
     border: 5px solid pink;
     border-radius: 25px;
-    background: rgb(181, 237, 241);    
+    background: rgb(181, 237, 241);      
 }
 .dear{
     text-align: center;
     /*color: rgb(68, 212, 205);
     color: rgba(127, 255, 212, 0.822);*/
     color:darkslategrey;
-    font-family: "Lucida Sans Unicode", sans-serif;
+    /*font-family: "Lucida Sans Unicode", sans-serif;*/
+    font-family: 'Sofia';
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -32,5 +33,6 @@ body{
 .from{
     text-align: center;    
     color:darkslategrey;
-    font-family: "Lucida Sans Unicode", sans-serif;    
+    /*font-family: "Lucida Sans Unicode", sans-serif;*/  
+    font-family: 'Sofia';  
 }

@@ -1,8 +1,55 @@
 #magazine{
-    width: 800px;
+  margin: 0 auto;
+    width: 80%;
     height: 400px;
+    color: black;
+    
   }
   
-#magazine .turn-page{
-    background-color:#ccc;
+ .turn-page{
+        width: 80%;
+    margin: 0 auto;
+  }
+
+  .page{
+    background-color:#ccc;    
+    border-radius: 10px;
+    width: 80%;    
+    margin: 70px auto;
+    font-family: 'Sofia';
+    font-size: 25px;
+  }
+
+  .button1{
+    background-color: white;
+    border: 2px solid;
+    border-radius: 50px;    
+    color: grey;
+    margin: 1px;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;  
+    font-size: 20px;
+    cursor: pointer;
+    outline:none;         
+  }
+
+ 
+  .left {
+    left: 0;
+    width:50%;
+    display: inline-block;
+    
+  }
+  
+  .right {
+    right: 0;
+    width:50%;
+    display: inline-block;
+  }
+  
+  .inside {    
+    margin: 50% auto;       
+    text-align: center;
+    font-size: 30px;
   }
