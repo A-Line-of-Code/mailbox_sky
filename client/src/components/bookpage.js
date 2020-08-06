@@ -11,8 +11,8 @@ export const Bookpage = (props) => {
             </div>
             <div className="right">
                 <div className="inside">        
-                {props.msg}<br/><br/><br/><br/><br/>
-                <p id="id">{props.id}</p>
+                {props.msg}
+                
                 </div>
             </div>            
         </div>
