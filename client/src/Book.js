@@ -36,8 +36,11 @@ export const Book = () => {
         ref={component => {flipPage = component;}}
         orientation="horizontal"
         width="100%"
-        animationDuration={1000} 
-        >       
+        animationDuration={900} 
+        disableSwipe="true"        
+        flipOnTouch="false"
+        flipOnTouchZone="0"
+        >        
         
         {page ? page.map(c=> {
             return(
