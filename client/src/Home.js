@@ -49,7 +49,7 @@ const book = () =>{history.push("/book")}
           <button type="button" className="button" onClick={submit}>open</button>   
         </div>
         <div>        
-          <div onClick={book} className="book" className="left">
+          <div onClick={book} className="left">
           <img src="img/book1.png" width="10%" alt="book" /><br/>BOOK
           </div>         
                    
