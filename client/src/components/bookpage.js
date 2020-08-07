@@ -6,7 +6,7 @@ export const Bookpage = (props) => {
         <div>
             <div className="left">
                 <div className="inside">
-                <img src = {props.img} alt="img" height="300px"/>
+                <img src = {props.img} alt="img" height="350px"/>
                 </div>
             </div>
             <div className="right">

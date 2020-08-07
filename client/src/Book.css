@@ -16,7 +16,7 @@
     border-radius: 10px;
     width: 80%;    
     margin: 70px auto;
-    font-family: 'Sofia';
+   
     font-size: 25px;
   }
 
@@ -43,13 +43,15 @@
   }
   
   .right {
-    right: 0;
+    right: 0;    
     width:50%;
     display: inline-block;
   }
   
   .inside {    
-    margin: 20% auto;       
+    margin: 10% auto;
+    padding: 10%;       
     text-align: center;
-    font-size: 30px;    
+    font-size: 25px;  
+    font-family: "Comic Sans MS", cursive, sans-serif; 
   }
