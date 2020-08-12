@@ -12,8 +12,8 @@ export const About = () => {
               <img src="/img/react.jpg" alt="React" height="300px" />
                 <img src="/img/node.jpg" alt="Node.js" height="300px" /><br/><br/>              
               <div className="tech">              
-              <a rel="GitHub" href="https://github.com/A-Line-of-Code/MailBox.git" target="_blank">GitHub</a> &nbsp;&nbsp;
-              <a rel="LinkedIn" href="https://www.linkedin.com/in/hyerim-sky-kwon-8787b0147/" target="_blank">LinkedIn</a><br/>
+              <a rel="GitHub" href="https://github.com/A-Line-of-Code" target="_blank">GitHub</a> &nbsp;&nbsp;
+              <a rel="Blog" href="https://letterbyfrontent.wordpress.com" target="_blank">Blog</a><br/>
               </div>
             </div>
             </div>
