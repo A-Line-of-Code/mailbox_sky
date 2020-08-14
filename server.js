@@ -30,7 +30,7 @@ app.post('/api/read', function(req, res) {
   sess=req.session;
   const to = req.body.to; 
   const pw= req.body.password;  
- 
+ console.log(to);
 	connection.query(
     'SELECT * FROM letter WHERE receiver = ? AND password = ?', [to, pw],    
     (err, rows, fields) => {     

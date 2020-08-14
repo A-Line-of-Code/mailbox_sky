@@ -8,8 +8,8 @@ export const About = () => {
             <div className="about">
             <div className="tech">
               <p className="blue">Development</p>
-              <div className="tech"> React, Node.js, Fetch API <br /> MySQl (Amazon RDS), Amazon S3</div><br />
-              <img src="/img/react.jpg" alt="React" height="300px" />
+              <div className="tech"> React, Node.js, Fetch API, AWS</div><br />
+              <img src="/img/react.jpg" alt="React" height="300px" /> &nbsp;
                 <img src="/img/node.jpg" alt="Node.js" height="300px" /><br/><br/>              
               <div className="tech">              
               <a rel="GitHub" href="https://github.com/A-Line-of-Code" target="_blank">GitHub</a> &nbsp;&nbsp;
