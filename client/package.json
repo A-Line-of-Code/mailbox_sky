@@ -1,7 +1,6 @@
 {
   "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.0",  
   "dependencies": {       
     "@testing-library/user-event": "^7.2.1",
     "@testing-library/react": "^9.5.0",
