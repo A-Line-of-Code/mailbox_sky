@@ -1,7 +1,7 @@
 {
     "host":"mailboxdb.c6oivetmlru3.ap-southeast-2.rds.amazonaws.com",
     "user":"admin",
-    "password":"password1",
+    "password":"dontforget1",
     "port":"3306",
     "database": "mailbox"
 }
