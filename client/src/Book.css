@@ -55,3 +55,9 @@
     font-size: 25px;  
     font-family: "Comic Sans MS", cursive, sans-serif; 
   }
+
+  @media (max-width: 500px) {
+    .inside{
+      font-size: 10px;  
+  }
+}

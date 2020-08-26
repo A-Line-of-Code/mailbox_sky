@@ -6,7 +6,7 @@ export const Letter = (props) => {
         <div>
          <h2 className="dear">{props.receiver}</h2>
         <div className="container">
-            <img src = {props.img} alt="img" height="300px"/> <br />
+            <img class= "img" src = {props.img} alt="img" height="300px"/> <br />
             <div className="msg">        
                 {props.msg}<br />{props.msg2}
                 <br /><br />

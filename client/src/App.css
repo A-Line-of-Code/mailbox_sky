@@ -72,3 +72,9 @@ input{
   font-family: 'Sofia';
   font-size: 15px;
 }
+
+@media (max-width: 490px) {
+  .img{
+      height: 150px;
+  }
+}
