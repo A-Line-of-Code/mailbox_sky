@@ -1,6 +1,8 @@
+@import url('https://fonts.google.apis.com/css?family=Source+Sans+Pro');
 body{
     background: lightyellow;   
-    font-family: "Lucida Sans Unicode", sans-serif;
+    /*font-family: "Lucida Sans Unicode", sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif ;
     font-size: 20px;
     
   }
@@ -18,12 +20,11 @@ body{
     font-size: 35px;
   }
   .about{
-    padding: 5px;
+    padding: 5px 5px 15px 5px;
     margin: 10px 70px;
     /*border: 5px solid #282c34;*/
     border: 5px solid powderblue;
-    border-radius: 25px;
-    font-weight: 900;
+    border-radius: 25px;    
     cursor: pointer;
   }
   
@@ -36,7 +37,8 @@ body{
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif ;
     font-weight: 900;
   }
   
