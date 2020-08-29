@@ -4,10 +4,10 @@ import {Letter} from "./components/letter"
 
 export const Read = () => {    
   const [letter, setLetter] = useState("");
+
   useEffect(() => {
-      callApi()    
-       .then(resp => setLetter(resp))
-  },[]);
+    callApi()    
+    .then(resp => setLetter(resp))},[]);
 
    const callApi = async () => {  
       const response = await fetch('/api/letter');

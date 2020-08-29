@@ -1,3 +1,4 @@
+
 import React from "react";
 import './About.css';
 
@@ -7,8 +8,9 @@ export const About = () => {
             <h1>TECH</h1>
             <div className="about">
             <div className="tech">
-              <p className="blue">Development</p>
-              <div className="tech"> React, Node.js, Fetch API, MySQL, AWS</div><br />
+              <h3 className="blue">Development</h3>
+              <h3 className="tech"> React, Node.js, MySQL, AWS </h3>
+              <h3> Responsive CSS, API </h3>
               <img class="img" src="/img/react.jpg" alt="React" height="300px" /> &nbsp;
                 <img class="img" src="/img/node.jpg" alt="Node.js" height="300px" /><br/><br/>              
               <div className="tech">              
